@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 898px) {
+    nav {
+        position: fixed;
+        top: 8rem;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #161616;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+    }
+
+    nav a {
+        font-size: 2.4rem;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-toggle:checked + .menu-icon + nav {
+        right: 0;
+    }
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: black;
+    padding: 8rem 2rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+@media (min-width: 898px) {
+    .home {
+        flex-direction: row;
+        gap: 8rem;
+    }
+}
+
+.home-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.home-content h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.home-img img {
+    width: 30vw;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s linear;
+    box-shadow: 0 0 25px #939292;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+/* Button */
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+/* Typing Text Animation */
+.typing-text {
+    font-size: 3rem;
+    font-weight: 600;
+    min-width: 280px;
+    color: #b74b4b;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 10s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    border-left: 2px solid #b74b4b;
+    right: 0;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Developer";
+    }
+    41%, 100% {
+        content: "Web Designer";
+    }
+}
+
+/* Sections Styling */
+section {
+    padding: 10rem 5rem;
+    min-height: 100vh;
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    margin: 7%;
+    font-size: 2rem;
+    text-align: justify;
+}
+
+#about {
+    min-height: 60vh;
+    padding: 10%;
+}
+
+#education {
+    min-height: 70vh;
+}
+
+#skills {
+    min-height: 80vh;
+}
+
+#experience {
+    min-height: 75vh;
+    padding: 50px;
+}
+
+#projects {
+    min-height: 85vh;
+}
+
+/* Responsive Adjustments */
+h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home .home-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 3rem;
+    }
+
+    .typing-text {
+        font-size: 2.5rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+    }
+
+    section {
+        padding: 8rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 45%;
+    }
+
+    .home .home-img img {
+        width: 60vw;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem 3rem;
+    }
+
+    .typing-text {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 5rem 1rem;
+    }
+}
