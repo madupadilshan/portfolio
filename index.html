@@ -1,3 +1,5 @@
+
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +21,7 @@
             <i class="fa-solid fa-bars"></i>
         </label>
 
-        <nav>
+        <nav class="nav-links">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
@@ -58,29 +60,64 @@
         <div class="education-item">
             <h3>Bachelor of Information and Communication Technology </h3>
             <p>University of Sri Jayewardenepura, Sri Lanka</p>
-            <p>Graduated with a focus on web development, algorithms, and software engineering. Involved in various programming competitions and coding clubs.</p>
         </div><br>
-        <div class="education-item">
-            <h3>High School</h3>
-            <p>Methodishtha national collage (2013 - 2022)</p>
-        </div>
+        
     </section>
 
     <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> HTML, CSS, JavaScript, Python</li>
-            <li><strong>Frontend Frameworks:</strong> React, Bootstrap</li>
-            <li><strong>Backend Technologies:</strong> Node.js, Express.js</li>
-            <li><strong>Databases:</strong> MySQL, MongoDB</li>
-            <li><strong>Version Control:</strong> Git, GitHub</li>
-            <li><strong>Other Skills:</strong> Responsive Design, RESTful APIs, Agile Methodology</li>
-        </ul>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-laptop-code"></i> Frontend Frameworks</h3>
+                <ul>
+                    <li>React</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-server"></i> Backend Technologies</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-database"></i> Databases</h3>
+                <ul>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-code-branch"></i> Version Control</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-brands fa-google"></i> Firebase</h3>
+                <ul>
+                    <li>Authentication</li>
+                    <li>Firestore Database</li>
+                    <li>Hosting</li>
+                    <li>Cloud Functions</li>
+                </ul>
+            </div>            
+        </div>
     </section>
 
     <section id="experience">
         <h2>Experience</h2>
-        
         <div class="experience-item">
             <h3>Freelance Web Developer</h3>
             <ul>
@@ -93,20 +130,57 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-item">
-            <h3>Personal Portfolio Website</h3>
-            <p>A fully responsive portfolio website showcasing my skills, projects, and experience. Built with HTML, CSS, and JavaScript.</p>
-        </div>
-        <div class="project-item">
-            <h3>Online Store</h3>
-            <p>Developed a fully functional online store with product listings, a shopping cart, and a payment gateway. Built using React and Node.js.</p>
-        </div>
-        <div class="project-item">
-            <h3>Blog Website</h3>
-            <p>Created a blog website with content management capabilities, allowing users to post, edit, and delete articles. Built with Python and Flask.</p>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="portfolio.jpg" alt="Portfolio Project">
+                <div class="project-content">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A fully responsive portfolio website showcasing my skills, projects, and experience. Built with HTML, CSS, and JavaScript.</p>
+                    <a href="https://madupadilshan.github.io/portfolio/" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="online-store.jpg" alt="Online Store Project">
+                <div class="project-content">
+                    <h3>Online Store</h3>
+                    <p>Developed a fully functional online store with product listings, a shopping cart, and a payment gateway. Built using React and Node.js.</p>
+                    <a href="https://madupadilshan.github.io/ecommerce-store" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="blog.jpg" alt="Blog Website Project">
+                <div class="project-content">
+                    <h3>Blog Website</h3>
+                    <p>Created a blog website with content management capabilities, allowing users to post, edit, and delete articles. Built with Python and Flask.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <script>
+        // Highlight the current section in the navbar
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
