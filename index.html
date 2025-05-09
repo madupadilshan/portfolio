@@ -194,15 +194,15 @@
                     <div class="project-content">
                         <h3>Blog Platform</h3>
                         <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>SQLite</span>
-                            <span>Markdown</span>
+                            <span>MongoDB</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express.js</span>
                         </div>
                         <p>Content management system allowing users to create, edit, and publish articles with rich text formatting. Features user roles and permissions.</p>
                         <div class="project-links">
-                            <a href="#" class="btn" target="_blank">Live Demo</a>
-                            <a href="#" class="btn btn-secondary" target="_blank">View Code</a>
+                            <a href="https://blogfrontend-nu.vercel.app/" class="btn" target="_blank">Live Demo</a>
+                            <a href="https://github.com/madupadilshan/blogApp" class="btn btn-secondary" target="_blank">View Code</a>
                         </div>
                     </div>
                 </div>
@@ -276,6 +276,7 @@
         // Improved scrolling behavior with Intersection Observer
         const navLinks = document.querySelectorAll('.nav-links a');
         const sections = document.querySelectorAll('section');
+        const menuToggle = document.getElementById('menu-toggle');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -303,6 +304,11 @@
                     target.scrollIntoView({
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu after clicking a link
+                    if (menuToggle.checked) {
+                        menuToggle.checked = false;
+                    }
                 }
             });
         });
