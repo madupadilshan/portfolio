@@ -71,7 +71,7 @@ body {
 
 
 /* Typography */
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
 }
@@ -293,7 +293,6 @@ section {
 .education-item { padding: 4rem; }
 .degree { color: var(--primary-color); margin-bottom: 1.5rem; font-size: clamp(2rem, 3vw, 2.4rem); }
 .institution, .duration { margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: clamp(1.5rem, 2vw, 1.7rem); color: #d1d5db;}
-.education-details p, .education-details i { color: #d1d5db; }
 
 /* Skills Section */
 #skills { background-color: var(--dark-bg); }
@@ -305,13 +304,6 @@ section {
 .skill-category li { font-size: clamp(1.4rem, 2vw, 1.6rem); color: #d1d5db; margin: 1rem 0; position: relative; padding-left: 2rem; }
 .skill-category li::before { content: "•"; color: var(--secondary-color); font-size: 2rem; position: absolute; left: 0; top: -0.3rem; }
 
-/* Experience Section */
-.experience-item { padding: 4rem; }
-.job-title { color: var(--primary-color); margin-bottom: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; font-size: clamp(2rem, 3vw, 2.4rem); }
-.job-duration { font-size: clamp(1.5rem, 2vw, 1.6rem); color: #d1d5db; }
-.job-responsibilities { margin-top: 2rem; list-style: none; }
-.job-responsibilities li { font-size: clamp(1.5rem, 2vw, 1.7rem); margin-bottom: 1.5rem; padding-left: 3rem; position: relative; color: #d1d5db;}
-.job-responsibilities i { color: var(--primary-color); position: absolute; left: 0; top: 0.3rem; }
 
 /* Projects Section */
 #projects { background-color: var(--dark-bg); }
@@ -326,6 +318,32 @@ section {
 .project-content p { font-size: clamp(1.4rem, 2vw, 1.6rem); color: #d1d5db; margin-bottom: 2.5rem; }
 .project-links { display: flex; gap: 1.5rem; }
 .project-links .btn { flex: 1; padding: 1rem; font-size: 1.4rem; }
+.view-all-container {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#viewAllProjectsBtn {
+    display: none;
+}
+
+.projects-container:not(.expanded) .project-card:nth-child(n + 3) {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .projects-container:not(.expanded) .project-card:nth-child(3) {
+        display: block;
+    }
+    
+    .projects-container:not(.expanded) .project-card:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+.projects-container.expanded .project-card {
+    display: block;
+}
 
 /* Contact Section */
 .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 5rem; margin-top: 3rem; }
