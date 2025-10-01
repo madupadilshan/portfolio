@@ -11,6 +11,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 ## ✨ Features
 
 ### 🎨 Design & UI
+
 - **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 - **Dark/Light Theme Toggle** - Switch between themes with smooth transitions
 - **Animated Title** - Eye-catching custom font animation
@@ -21,6 +22,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 - **Smooth Transitions** - Enhanced hover effects and animations
 
 ### 📱 Sections
+
 - **Home** - Introduction with animated elements
 - **About** - Professional background and expertise
 - **Education** - Academic qualifications
@@ -29,6 +31,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 - **Contact** - Contact form and social media links
 
 ### 🔧 Additional Features
+
 - **Back to Top Button** - Quick navigation to top of page
 - **Active Section Highlighting** - Navigation shows current section
 - **Mobile Menu** - Auto-closes after navigation on small screens
@@ -37,6 +40,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 - **Favicon Support** - Custom browser tab icon
 
 ### 🔐 Admin Dashboard (Hidden Feature)
+
 - **Secret Access** - Hidden admin panel (footer logo multi-click)
 - **Visitor Analytics** - Track page visits and statistics
 - **Contact Messages** - View form submissions
@@ -48,11 +52,13 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - **HTML5** - Semantic markup
 - **CSS3** - Modern styling with CSS variables
 - **Vanilla JavaScript** - No framework dependencies
 
 ### Libraries & Tools
+
 - **Font Awesome 6.5.2** - Icon library
 - **AOS (Animate On Scroll)** - Scroll animations
 - **tsParticles v2** - Particle effects
@@ -60,6 +66,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 - **CalSans Font** - Custom animated title font
 
 ### Development Tools
+
 - **Git** - Version control
 - **GitHub Pages** - Hosting
 - **VS Code** - Code editor
@@ -95,28 +102,33 @@ portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - Basic understanding of HTML, CSS, JavaScript (for customization)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/madupadilshan/portfolio.git
    ```
 
 2. **Navigate to project folder**
+
    ```bash
    cd portfolio
    ```
 
 3. **Open in browser**
+
    - Simply open `index.html` in your browser
    - Or use a local server (recommended):
+
    ```bash
    # Using Python
    python -m http.server 8000
-   
+
    # Using Node.js
    npx serve
    ```
@@ -131,17 +143,20 @@ portfolio/
 ### Update Personal Information
 
 1. **Edit `index.html`:**
+
    - Change name, title, description
    - Update contact information
    - Modify project details
    - Update social media links
 
 2. **Replace Images:**
+
    - `pho.jpg` - Your profile photo
    - `favicon.png` - Your favicon (32x32px)
    - Project screenshots in root folder
 
 3. **Update `style.css`:**
+
    - Change color scheme (CSS variables in `:root`)
    - Modify spacing, fonts, or layouts
 
@@ -154,10 +169,10 @@ portfolio/
 
 ```css
 :root {
-    --primary-color: #b74b4b;      /* Main accent color */
-    --secondary-color: #f9a825;     /* Secondary accent */
-    
-    /* Customize these for different theme */
+  --primary-color: #b74b4b; /* Main accent color */
+  --secondary-color: #f9a825; /* Secondary accent */
+
+  /* Customize these for different theme */
 }
 ```
 
@@ -218,6 +233,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Madupa Dilshan**
+
 - GitHub: [@madupadilshan](https://github.com/madupadilshan)
 - LinkedIn: [Madupa Dilshan](https://www.linkedin.com/in/madupadilshan)
 - Email: madupadilshan111@gmail.com
@@ -234,6 +250,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Support
 
 If you have any questions or need help with customization:
+
 - Open an issue on GitHub
 - Email me at madupadilshan111@gmail.com
 
