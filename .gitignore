@@ -1,0 +1,48 @@
+# Admin Security Files (DO NOT COMMIT!)
+generate-password-hash.html
+ADMIN_SECURITY_README.md
+
+# Personal Documents
+*.pdf
+Madupa_Dilshan_CV.pdf
+
+# Environment Variables (if you add later)
+.env
+.env.local
+.env.production
+
+# Node modules (if you add Node.js later)
+node_modules/
+
+# IDE/Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Build Files (if you add build process later)
+dist/
+build/
+out/
+
+# Backup Files
+*.backup
+*.bak
+*.old
