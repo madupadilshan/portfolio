@@ -1,66 +1,74 @@
-// Function to handle active navigation link highlighting on scroll
-const navLinks = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section');
-const menuToggle = document.getElementById('menu-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+    const menuToggle = document.getElementById('menu-toggle');
+    const header = document.querySelector('header');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${entry.target.id}`) {
-                    link.classList.add('active');
-                }
-            });
+    // Function to close mobile menu
+    const closeMenu = () => {
+        if (menuToggle.checked) {
+            menuToggle.checked = false;
         }
-    });
-}, { threshold: 0.3 }); // Highlight when 30% of the section is visible
+    };
 
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Function for smooth scrolling when a navigation link is clicked
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-
-            // Close the mobile menu if it's open after clicking a link
-            if (menuToggle.checked) {
-                menuToggle.checked = false;
+    // Observer for highlighting active nav link on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${entry.target.id}`) {
+                        link.classList.add('active');
+                    }
+                });
             }
-        }
+        });
+    }, {
+        rootMargin: `-${header.offsetHeight}px 0px 0px 0px`,
+        threshold: 0.3
     });
-});
 
-// Function to handle the "View All / Show Less" projects button toggle
-document.addEventListener('DOMContentLoaded', function() {
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Add click listener to all nav links for smooth scrolling and closing the menu
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                // Smooth scroll to the element
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // Close the mobile menu after clicking a link
+                closeMenu();
+            }
+        });
+    });
+
+    // Function to handle the "View All / Show Less" projects button toggle
     const viewAllBtn = document.getElementById('viewAllProjectsBtn');
     const projectsGrid = document.getElementById('projectsGrid');
-    const projectsSection = document.getElementById('projects'); // Get the projects section element
+    const projectsSection = document.getElementById('projects');
 
-    // Show the button only if there are more than 3 projects
     if (projectsGrid && projectsGrid.children.length > 3) {
         viewAllBtn.style.display = 'inline-block';
-        viewAllBtn.textContent = 'View All Projects'; // Set initial text
+        viewAllBtn.textContent = 'View All Projects';
     } else if (viewAllBtn) {
         viewAllBtn.style.display = 'none';
     }
     
     if (viewAllBtn && projectsGrid) {
         viewAllBtn.addEventListener('click', function() {
-            // Toggle the 'expanded' class on the grid
             projectsGrid.classList.toggle('expanded');
 
-            // Check if the grid is now expanded and update the button text accordingly
             if (projectsGrid.classList.contains('expanded')) {
                 this.textContent = 'Show Less';
             } else {
                 this.textContent = 'View All Projects';
-                // Optional: Scroll back to the top of the projects section for better user experience
                 if (projectsSection) {
                     projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
