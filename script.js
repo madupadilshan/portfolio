@@ -189,11 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (viewAllBtn && projectsGrid) {
         viewAllBtn.addEventListener('click', function() {
+            const btnText = this.querySelector('.btn-text');
+            const btnIcon = this.querySelector('i');
+            
             projectsGrid.classList.toggle('expanded');
+            
             if (projectsGrid.classList.contains('expanded')) {
-                this.textContent = 'Show Less';
+                btnText.textContent = 'Show Less';
+                btnIcon.classList.remove('fa-arrow-down');
+                btnIcon.classList.add('fa-arrow-up');
             } else {
-                this.textContent = 'View All Projects';
+                btnText.textContent = 'View All Projects';
+                btnIcon.classList.remove('fa-arrow-up');
+                btnIcon.classList.add('fa-arrow-down');
                 if (projectsSection) {
                     projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
