@@ -537,6 +537,81 @@ document.addEventListener('DOMContentLoaded', () => {
         
         alert('✅ Data downloaded successfully!');
     }
+
+    // ==================== CERTIFICATES SECTION FUNCTIONALITY ====================
+    
+    // Initialize Certificates Swiper
+    if (document.querySelector('.certificatesSwiper')) {
+        const certificatesSwiper = new Swiper('.certificatesSwiper', {
+            // Swiper Configuration
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            
+            // Auto-play Configuration
+            autoplay: {
+                delay: 3500,                    // 3.5 seconds දී slide එක වෙනස් වෙයි
+                disableOnInteraction: false,    // User interact කළාට පස්සෙත් auto-play continue
+                pauseOnMouseEnter: true,        // Hover කරද්දී pause වෙනවා
+                reverseDirection: false,        // Forward direction එකේ යනවා
+            },
+            
+            speed: 1000,                        // Transition speed (1 second)
+            effect: 'slide',                    // Slide effect (can be 'slide', 'fade', 'cube', 'coverflow', 'flip')
+            grabCursor: true,                   // Cursor changes to grab icon
+            centeredSlides: false,              // Current slide center වෙනවද
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+                dynamicMainBullets: 3,
+            },
+            
+            // Responsive breakpoints
+            breakpoints: {
+                // Mobile (>= 576px)
+                576: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // Tablet (>= 768px)
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25
+                },
+                // Desktop (>= 992px)
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                // Large Desktop (>= 1200px)
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            },
+            
+            // Accessibility
+            a11y: {
+                prevSlideMessage: 'Previous certificate',
+                nextSlideMessage: 'Next certificate',
+            },
+            
+            // Keyboard control
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true
+            }
+        });
+    }
 });
 
 // Add shake animation to CSS (inline for now)
